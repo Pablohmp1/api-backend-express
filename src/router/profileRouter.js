@@ -1,25 +1,13 @@
 import express from 'express'
+import { createProfileController } from '../controllers/profile/createProfileController.js'
+import { listProfileController } from '../controllers/profile/listProfileController.js'
+import { deleteProfileController } from '../controllers/profile/deleteProfileController.js'
 
 const router = express.Router()
     
-router.post('/', (req,res) => {
-      const dados = req.body
-      res.json({
-          message: 'Usuário criado com sucesso' ,
-          profile: dados
-      })
-})
+router.post('/', createProfileController)
 
-router.post('/', (req, res) => {
-  const dados = req.body
-  res.send({message: 'usuario criado com sucesso!',
-    profile: dados
-  })
-})
-
-router.get('/', (req, res) => {
-  res.json({message: 'Usuários consultados com sucesso!'})
-})
+router.get('/', listProfileController)
 
 router.get('/:id', (req, res) => {
 
@@ -36,8 +24,6 @@ router.patch('/', (req, res) => {
   res.json({message: 'Usuário editado parcialmente com sucesso!'})
 })
 
-router.delete('/', (req, res) => {
-  res.json({message: 'Usuário deletado com sucesso'})
-})
+router.delete('/', deleteProfileController)
 
 export default router

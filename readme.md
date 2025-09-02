@@ -61,4 +61,24 @@ app.delete('/user', (req, res) => {
 
 - MODEL: Define as regras de negocios,
 
+- ORM= O=OBJECT R:RELATIONAL M: MODEL (Relacionamento do objeto do javascript com base de dados), com a falicidade de executar no banco de dados!
+
+## comandos do prisma 
+
+- Istalação do Prisma
+npm i prisma - D
+npm i @prisma/cliente
+
+- Inicializar o Prisma
+ - npx prisma init
+
+- Gerar o model do prisma a partir de um BD (banco de dados) existente
+ - npx prisma db pull
+
+- Gerar um banco de dados a partir de um model do prisma
+ - npx prisma db push
+
+- Gerar os arquivos necessarios para usar o prisma client no código.
+  - 
+
 
